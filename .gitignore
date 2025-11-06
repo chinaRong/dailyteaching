@@ -1,0 +1,28 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Django migrations
+*/migrations/*.py
+*/migrations/*.pyc
+!*/migrations/__init__.py
+
+# Database files
+db.sqlite3
+
+# Static and media files (可选，根据部署策略)
+staticfiles/
+media/
+
+# IDE files
+.vscode/
+.idea/
+
+# Environment variables
+*.env
