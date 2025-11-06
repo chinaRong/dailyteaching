@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.postgres.fields import JSONField  # 若用 PostgreSQL
+# from django.contrib.postgres.fields import JSONField  # 若用 PostgreSQL
 
 
 # 对于 SQLite / MySQL / 默认情况，可直接用 models.JSONField
