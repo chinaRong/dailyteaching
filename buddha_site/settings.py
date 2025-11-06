@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY
 SECRET_KEY = 'django-insecure-please-change-this-to-a-secure-key'
 DEBUG = True
-ALLOWED_HOSTS = ['*']  # 部署时请改为 ['dailyteaching.cn']
+ALLOWED_HOSTS = ['dailyteaching.cn']  # 部署时请改为 ['dailyteaching.cn']
 
 # Application definition
 INSTALLED_APPS = [
