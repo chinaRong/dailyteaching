@@ -2,6 +2,8 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import UserData
 from datetime import date, datetime
+import json
+import os
 
 
 def date_to_day_number(date_str):
@@ -46,3 +48,26 @@ def visitor_view(request):
         "data_map": data_map,
     })
 
+
+'''
+{
+    "active": 1,
+    "content": "每周一~周六 Zoom房间 2025茶话会 进行《入菩萨行论》共修，欢迎各位同学参加。点击此公告即能复制获得房间号及密码~",
+    "extend": "房间号2026202601 密码123456",
+    "dead time": "2025-12-31"
+}
+'''
+
+
+def announcement():
+    file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "announcement.json")
+
+    if not os.path.exists(file_path):
+        return JsonResponse({"active": 0})
+
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return JsonResponse(data)
+    except Exception:
+        return JsonResponse({"active": 0})
