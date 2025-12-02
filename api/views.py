@@ -59,7 +59,7 @@ def visitor_view(request):
 '''
 
 
-def announcement():
+def announcement(request):
     file_path = "/home/admin/dailyteaching/announcement.json"
 
     if not os.path.exists(file_path):
