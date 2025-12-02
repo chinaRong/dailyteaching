@@ -60,7 +60,7 @@ def visitor_view(request):
 
 
 def announcement():
-    file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "announcement.json")
+    file_path = "/home/admin/dailyteaching/announcement.json"
 
     if not os.path.exists(file_path):
         return JsonResponse({"active": 0})
